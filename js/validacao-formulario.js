@@ -31,6 +31,7 @@ function adicionarEncomenda() {
         // Calcula o valor total da encomenda
         var valorTotal = calculaTotal(parseFloat(quantidade), parseFloat(valorUnitario));
         valorTotal = formatacao(valorTotal);
+
         // Selecionando a tabela e criando linha
         var tabela = document.querySelector(".tabela tbody");
         var novaLinha = document.createElement("tr");
@@ -48,6 +49,7 @@ function adicionarEncomenda() {
         celulaQuantidade.textContent = quantidade;
         var celulaValorUnitario = document.createElement("td");
         celulaValorUnitario.textContent = valorUnitario;
+        
         if(quantidade == "QTDE INVÁLIDA!" && valorUnitario == "VALOR INVÁLIDO!"){
             novaLinha.classList.add("valor-invalido");
         } else if (quantidade == "QTDE INVÁLIDA!") { // Verifica se a quantidade é inválida
