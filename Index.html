@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <link href="estilo.css" rel='stylesheet'>
+    <!--<link href="Assets\Imagens\icone.ico" rel="shortcut icon" />-->
+    <title>Home - Nadal</title>
+</head>
+
+<body>
+    <header>
+        <div class="logocaixa">
+            <img src="Assets\Imagens/logo.jpg" title="Nadal" class="logo" />
+        </div>
+    </header>
+
+    <!--Conteúdo do Corpo da Página-->
+    <main>
+        <!--Sobre os filmes-->
+        <section class="area-nadal">
+            <h1 class="titulo-nadal">Lista de Encomendas</h1>
+            <hr>
+            <table border="1" class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cliente">
+                        <td>Pedro</td>
+                        <td>Piratas do Caribe</td>
+                        <td class="info-qtd">3</td>
+                        <td class="info-valor">5</td>
+                        <td class="info-total"></td>
+                    </tr>
+                    <tr class="cliente">
+                        <td>João</td>
+                        <td>Os Vingadores: Ultimato</td>
+                        <td class="info-qtd">0</td>
+                        <td class="info-valor">-1</td>
+                        <td class="info-total"></td>
+                    </tr>
+                    <tr class="cliente">
+                        <td>Daniel</td>
+                        <td>Barbie Girl</td>
+                        <td class="info-qtd">3</td>
+                        <td class="info-valor">4</td>
+                        <td class="info-total"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <br><br>
+        <section>
+            <h1 class="titulo-nadal"> Adicionar Nova Encomenda</h1>
+            <hr>
+            <form class="formulario">
+                <fieldset class="borda-padrao">
+                    <label> Nome: </label>
+                    <input id="nome" type="text" class="input-padrao" placeholder="Digite o nome do cliente">
+
+                    <label> Qtde: </label>
+                    <input id="qtde" type="number" class="input-padrao" placeholder="Digite a quantidade encomendada">
+
+                    <label> Produto: </label>
+                    <select id="produto" class="input-padrao">
+                        <option></option>
+                        <option>O Poderoso Chefão</option>
+                        <option>Tempos Modernos</option>
+                        <option>Tropa de Elite</option>
+                        <option>Cidade de Deus</option>
+                        <option>Amante Eternos</option>
+                        <option>O Medo Consome a Alma</option>
+                    </select>
+
+                    <label> Valor Unitário: </label>
+                    <input id="valor" type="text" class="input-padrao" placeholder="Digite o valor unitário do produto" pattern="\d+(\.\d{1,2})?" title="Por favor, insira um valor válido (formato: XX.XX)">
+
+                </fieldset>
+
+                <button id="Enviar-Encomenda" value="Enviar Formulário" class="enviar">
+                
+                <br><br><br><br>
+            </form>
+        </section>
+    </main>
+    <script src="js/calcula-total.js"></script>
+    <script src="js/validacao-formulario.js"></script>
+</body>
+
+</html>

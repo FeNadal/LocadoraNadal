@@ -1,0 +1,125 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.logocaixa {
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+}
+
+.area-nadal {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-nadal {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.borda-padrao {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-padrao {
+    width: calc(100% - 22px); /* Leva em consideração o padding e a borda */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-padrao:focus {
+    outline: none;
+    border-color: black;
+}
+
+.enviar {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+    background-color: black;
+}
+/*-------------------------------------------------------------------------------*/
+
+.qtde-invalida{
+    color: red;
+}
+
+.valor-invalido{
+    background-color: red;
+}
+
+/*-------------------------------------------------------------------------------*/
