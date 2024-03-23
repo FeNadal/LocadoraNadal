@@ -1,68 +1,82 @@
+//Selecionando o botão pelo seu id
 var botaoAdicionar = document.querySelector("#Enviar-Encomenda");
 
+//Quando o botão é clicado, esta função é chamada
 botaoAdicionar.addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("O botão foi clicado!");
-    adicionarEncomenda();
+    console.log("O botão foi clicado!"); //Escrevendo no console
+    adicionarEncomenda(); //Chamando a função para executar as ações
 });
 
 
+//Função que armazena os dados e cria uma nova linha
 function adicionarEncomenda() {
-    // Pegar os valores do formulário
+
+    //Salvar os valores do formulário em uma variável através dos id's
     var nome = document.querySelector("#nome").value;
     var quantidade = document.querySelector("#qtde").value;
     var produto = document.querySelector("#produto").value;
     var valorUnitario = document.querySelector("#valor").value;
 
-    // Validar se todos os campos foram preenchidos
+    //Validar se todos os campos foram preenchidos
     if (!nome || !quantidade || !produto || !valorUnitario) {
-        alert("Preencher todos os campos corretamente");
+        alert("Preencher todos os campos corretamente"); //Cria um aviso
         return;
     } else {
-        if(verificaTudo(quantidade, valorUnitario)){
-            quantidade = "QTDE INVÁLIDA!";
-            valorUnitario = "VALOR INVÁLIDO!";
-        } else if (verificaQuantidade(quantidade, valorUnitario)) { // Verifica se a quantidade é inválida
-            quantidade = "QTDE INVÁLIDA!";
-        } else if (verificaValor(quantidade, valorUnitario)) {
-            valorUnitario = "VALOR INVÁLIDO!"
-        } 
-
-        // Calcula o valor total da encomenda
+        //Salvar o valor total do valor unitário * quantidade feita na função calculaTotal
         var valorTotal = calculaTotal(parseFloat(quantidade), parseFloat(valorUnitario));
-        valorTotal = formatacao(valorTotal);
+        valorTotal = formatacao(valorTotal); // Formatando o valor total
 
-        // Selecionando a tabela e criando linha
+        //Selecionar a tabela
         var tabela = document.querySelector(".tabela tbody");
-        var novaLinha = document.createElement("tr");
+        //Criar a linha nova
+        var novaLinha = document.createElement("tr"); 
 
-        // Adicionar células com os dados do formulário à nova linha
-        var celulaNome = document.createElement("td");
-        celulaNome.textContent = nome;
-        novaLinha.appendChild(celulaNome);
+        //Adicionar o nome com os dados do formulário à nova linha
+        var celulaNome = document.createElement("td"); //Criar uma nova célula de dados para o nome
+        celulaNome.textContent = nome; //Definir o conteúdo como o valor da variável nome
+        novaLinha.appendChild(celulaNome); //Adicionar a célula do nome à nova linha da tabela
 
+        //Adicionar o produto com os dados do formulário à nova linha
         var celulaProduto = document.createElement("td");
         celulaProduto.textContent = produto;
         novaLinha.appendChild(celulaProduto);
 
+        //Adicionar a quantidade com os dados do formulário à nova linha
         var celulaQuantidade = document.createElement("td");
         celulaQuantidade.textContent = quantidade;
+        //Adicionar o valor unitário com os dados do formulário à nova linha
         var celulaValorUnitario = document.createElement("td");
         celulaValorUnitario.textContent = valorUnitario;
-        
-        if(quantidade == "QTDE INVÁLIDA!" && valorUnitario == "VALOR INVÁLIDO!"){
+
+        //Formatar o valor unitário com a função formatação
+        celulaValorUnitario.textContent = formatacao(parseFloat(valorUnitario));
+
+        //Verificar se há dados nulos ou zerados
+        if (verificaTudo(quantidade, valorUnitario)) { //Verificar se a quantidade e o valor unitário é invalido
+            novaLinha.classList.add("valor-invalido"); //Adicionar a classe à célula de valor
+            celulaQuantidade.textContent = "QTDE INVÁLIDA!"; //Definir o valor da célula do valor unitário como "Quantidade Invalida"
+            celulaValorUnitario.textContent = "VALOR INVÁLIDO!";
+            valorTotal = ""; //Definir o valor total para nulo
+        } else if (verificaQuantidade(quantidade, valorUnitario)) { //Verificar se a quantidade é inválida
+            celulaQuantidade.classList.add("qtde-invalida"); 
+            celulaQuantidade.textContent = "QTDE INVÁLIDA!";
+            valorTotal = "";
+        } else if (verificaValor(quantidade, valorUnitario)) { //Verificar se o valor unitárioe é inválido
             novaLinha.classList.add("valor-invalido");
-        } else if (quantidade == "QTDE INVÁLIDA!") { // Verifica se a quantidade é inválida
-            celulaQuantidade.classList.add("qtde-invalida"); // Adiciona a classe à célula de quantidade
-        } else if (valorUnitario == "VALOR INVÁLIDO!") {
-            novaLinha.classList.add("valor-invalido");
-        } 
-        
+            celulaValorUnitario.textContent = "VALOR INVÁLIDO!";
+            valorTotal = "";
+        }
+
         novaLinha.appendChild(celulaQuantidade);
         novaLinha.appendChild(celulaValorUnitario);
 
+        //Adicionar célula para o valor total
+        var celulaValorTotal = document.createElement("td");
+        celulaValorTotal.textContent = valorTotal;
+        novaLinha.appendChild(celulaValorTotal);
 
-        // Adicionar a nova linha à tabela
+        //Adicionar a nova linha à tabela
         tabela.appendChild(novaLinha);
 
     }
