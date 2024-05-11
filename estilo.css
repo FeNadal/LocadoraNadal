@@ -123,3 +123,13 @@ label {
 }
 
 /*-------------------------------------------------------------------------------*/
+
+#filtrar-tabela{
+    width: 19.5%;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.invisivel{
+    display: none;
+}

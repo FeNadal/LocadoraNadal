@@ -19,6 +19,8 @@
         <section class="area-nadal">
             <h1 class="titulo-nadal">Lista de Encomendas</h1>
             <hr>
+            <label for="filtraTabela">Filtrar</label>
+            <input type="text" id="filtrar-tabela" placeholder="Digite o nome do Filtro">
             <table border="1" class="tabela">
                 <thead>
                     <tr>
@@ -29,23 +31,23 @@
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="remove-table">
                     <tr class="cliente">
-                        <td>Pedro</td>
+                        <td class="info-nome">Pedro</td>
                         <td>Piratas do Caribe</td>
                         <td class="info-qtd">3</td>
                         <td class="info-valor">5</td>
                         <td class="info-total"></td>
                     </tr>
                     <tr class="cliente">
-                        <td>João</td>
+                        <td class="info-nome">João</td>
                         <td>Os Vingadores: Ultimato</td>
                         <td class="info-qtd">0</td>
                         <td class="info-valor">-1</td>
                         <td class="info-total"></td>
                     </tr>
                     <tr class="cliente">
-                        <td>Daniel</td>
+                        <td class="info-nome">Daniel</td>
                         <td>Barbie Girl</td>
                         <td class="info-qtd">3</td>
                         <td class="info-valor">4</td>
@@ -78,18 +80,21 @@
                     </select>
 
                     <label> Valor Unitário: </label>
-                    <input id="valor" type="text" class="input-padrao" placeholder="Digite o valor unitário do produto" pattern="\d+(\.\d{1,2})?" title="Por favor, insira um valor válido (formato: XX.XX)">
+                    <input id="valor" type="text" class="input-padrao" placeholder="Digite o valor unitário do produto"
+                        pattern="\d+(\.\d{1,2})?" title="Por favor, insira um valor válido (formato: XX.XX)">
 
                 </fieldset>
 
-                <button id="Enviar-Encomenda" value="Enviar Formulário" class="enviar">
-                
+                <input type="submit" id="Enviar-Encomenda" value="Enviar Formulário" class="enviar">
+
                 <br><br><br><br>
             </form>
         </section>
     </main>
     <script src="js/calcula-total.js"></script>
     <script src="js/validacao-formulario.js"></script>
+    <script src="js/filtrar.js"></script>
+    <script src="js/remove-linha.js"></script>
 </body>
 
 </html>
