@@ -1,0 +1,39 @@
+{
+    "encomenda":[
+        {
+            "nome": "Maria Betina",
+            "produto": "Tempos Modernos",
+            "quantidade": 2,
+            "valorUnitario": 20,
+            "total": 40
+        },
+        {
+            "nome": "Licoln Nal",
+            "produto": "Cidade de Deus",
+            "quantidade": 3,
+            "valorUnitario": 50,
+            "total": 150
+        },
+        {
+            "nome": "Gabigol",
+            "produto": "Amante Eternos",
+            "quantidade": 1,
+            "valorUnitario": 2,
+            "total": 2
+        },
+        {
+            "nome": "Gustavo Felix",
+            "produto": "Tropa de Elite",
+            "quantidade": 10,
+            "valorUnitario": 22,
+            "total": 220
+        },
+        {
+            "nome": "Wiu e Beto",
+            "produto": "Cidade de Deus",
+            "quantidade": 1000,
+            "valorUnitario": 220,
+            "total": 220000
+        }
+    ]
+}
