@@ -54,18 +54,14 @@ function adicionarEncomenda() {
 
         //Verificar se há dados nulos ou zerados
         if (verificaTudo(quantidade, valorUnitario)) { //Verificar se a quantidade e o valor unitário é invalido
-            novaLinha.classList.add("valor-invalido"); //Adicionar a classe à célula de valor
-            celulaQuantidade.textContent = "QTDE INVÁLIDA!"; //Definir o valor da célula do valor unitário como "Quantidade Invalida"
-            celulaValorUnitario.textContent = "VALOR INVÁLIDO!";
-            valorTotal = ""; //Definir o valor total para nulo
+            alert("Inserir Quantidade e Valor Unitário Válidos!"); //Cria um aviso
+            return;
         } else if (verificaQuantidade(quantidade, valorUnitario)) { //Verificar se a quantidade é inválida
-            celulaQuantidade.classList.add("qtde-invalida"); 
-            celulaQuantidade.textContent = "QTDE INVÁLIDA!";
-            valorTotal = "";
+            alert("Inserir Quantidade Válida!"); //Cria um aviso
+            return;
         } else if (verificaValor(quantidade, valorUnitario)) { //Verificar se o valor unitárioe é inválido
-            novaLinha.classList.add("valor-invalido");
-            celulaValorUnitario.textContent = "VALOR INVÁLIDO!";
-            valorTotal = "";
+            alert("Inserir Valor Unitário Válido!"); //Cria um aviso
+            return;
         }
 
         novaLinha.appendChild(celulaQuantidade);
