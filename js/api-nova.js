@@ -21,6 +21,11 @@ const carregaLista =(json) => {
     const lista = document.querySelector("div.lista2");
     lista.innerHTML="";
 
+    if (json.Response == 'False'){
+        alert("Nenhum filtro encontrado!")
+        return
+    }
+
     json.Search.forEach(element => {
         console.log(element);
 

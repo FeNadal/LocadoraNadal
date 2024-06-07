@@ -135,8 +135,7 @@ label {
 }
 
 .title2{
-    background-color: white;
-    color: black;
+    color: white;
 }
 
 .forma{
@@ -149,6 +148,7 @@ label {
 }
 
 input#pesquisa2{
+    background-color: #f2f2f2;
     padding: 5px;
     border: none;
     outline: none;
@@ -172,6 +172,8 @@ input#pesquisa2{
     margin-top: 10px;
     padding: 5px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .item{
@@ -179,12 +181,15 @@ input#pesquisa2{
     text-align: center;
     width: 200px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid red;
+    background-color: black;
     margin: 5px;
+    color: white;
 }
 
 .item:hover{
     background-color: red;
+    color: white;
     cursor: pointer;
 }
 

@@ -7,7 +7,7 @@ function adicionarEncomenda() {
     var valorUnitario = document.querySelector("#valor").value;
 
     // Validar se todos os campos foram preenchidos
-    if (!nome || !quantidade || !produto || !valorUnitario) {
+    if (!nome || !quantidade || !produto || !valorUnitario || quantidade <=0 || valorUnitario <=0 ) {
         alert("Preencher todos os campos corretamente"); // Alerta de campos não preenchidos
         return;
     }
