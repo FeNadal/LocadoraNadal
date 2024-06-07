@@ -133,3 +133,62 @@ label {
 .invisivel{
     display: none;
 }
+
+.title2{
+    background-color: white;
+    color: black;
+}
+
+.forma{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+input#pesquisa2{
+    padding: 5px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.novo-filme{
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.novo-filme:hover{
+    background-color: red;
+}
+
+.lista2{
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+}
+
+.item{
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.item:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.item img{
+    width: 100%;
+    border: 2px solid black;
+}
